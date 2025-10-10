@@ -42,14 +42,21 @@ public class WordSorter
         for (String wordy : words) {
             lWords.add(wordy.toLowerCase());
         }
-		for(int i = 0;i<lWords.size();i++){
-			for(int i = 0;i<lWords.size()-1;i++){
-				String x = (lWords.get(i)).chartAt(0)
-				String y = (lWords.get(i+1)).chartAt(0)
+		for(int i = 0;i<lWords.size()-1;i++){
+			for(int j = 0;j<lWords.size()-i-1;j++){
+				char x = (lWords.get(j)).charAt(0);
+				char y = (lWords.get(j+1)).charAt(0);
 				
-				if(x < y){
-					lWords.set(
-					)
+				String word1 = lWords.get(j);
+				String word2 = lWords.get(j+1);
+				if(x > y){
+					String z = lWords.get(j);
+					lWords.set(j, lWords.get(j+1));
+        			lWords.set(j+1, z);
+				}
+				if(word1.equals(word2)){
+					lWords.remove(word2);
+					
 				}
 			}
 		}
